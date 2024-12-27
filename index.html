@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicios de Lógica</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.3/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-base-100 min-h-screen p-8">
+    <div class="container mx-auto max-w-4xl">
+      <!-- Hero -->
+      <div class="text-center py-10">
+        <h1 class="text-6xl md:text-7xl font-bold">
+          Ejercicios de
+          <span class="text-primary">LÓGICA</span>
+          <br />
+          Fullstack 4!
+        </h1>
+      </div>
+
+      <!-- Ejercicios Section -->
+      <div class="space-y-6">
+        <!-- Ejercicio 1: Par o Impar -->
+        <div class="card bg-base-200 shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title">Números Pares e Impares</h2>
+            <p class="text-base-content">
+              Determinar si un número es par o impar
+            </p>
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">Ingrese un número:</span>
+              </label>
+              <div class="flex gap-2">
+                <input
+                  type="number"
+                  id="input1"
+                  class="input input-bordered w-full max-w-xs"
+                  placeholder="Ingrese un número"
+                />
+                <button onclick="checkNumber(1)" class="btn btn-primary">
+                  Ver
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ejercicio 2: Número Mayor -->
+        <div class="card bg-base-200 shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title">Comparación de Tres Números</h2>
+            <p class="text-base-content">
+              Determinar cuál de tres números es el mayor
+            </p>
+            <div class="form-control">
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-2 mb-2">
+                <input
+                  type="number"
+                  id="input2a"
+                  class="input input-bordered"
+                  placeholder="Primer número"
+                />
+                <input
+                  type="number"
+                  id="input2b"
+                  class="input input-bordered"
+                  placeholder="Segundo número"
+                />
+                <input
+                  type="number"
+                  id="input2c"
+                  class="input input-bordered"
+                  placeholder="Tercer número"
+                />
+              </div>
+              <button onclick="findLargest()" class="btn btn-primary">
+                Ver
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ejercicio 3: Calificaciones -->
+        <div class="card bg-base-200 shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title">Evaluación de Calificaciones</h2>
+            <p class="text-base-content">
+              Evaluar una calificación y mostrar su descripción (reprobado,
+              regular, bien, muy bien, excelente)
+            </p>
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">Ingrese la calificación (0-10):</span>
+              </label>
+              <div class="flex gap-2">
+                <input
+                  type="number"
+                  id="input3"
+                  class="input input-bordered w-full max-w-xs"
+                  placeholder="Calificación"
+                />
+                <button onclick="checkGrade()" class="btn btn-primary">
+                  Ver
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ejercicio 4: Rango -->
+        <div class="card bg-base-200 shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title">Validación de Rango</h2>
+            <p class="text-base-content">
+              Verificar si un número está entre 1 y 100
+            </p>
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">Ingrese un número:</span>
+              </label>
+              <div class="flex gap-2">
+                <input
+                  type="number"
+                  id="input4"
+                  class="input input-bordered w-full max-w-xs"
+                  placeholder="Número"
+                />
+                <button onclick="checkRange()" class="btn btn-primary">
+                  Ver
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ejercicio 5: Palíndromo -->
+        <div class="card bg-base-200 shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title">Verificación de Palíndromo</h2>
+            <p class="text-base-content">
+              Determinar si un número es palíndromo (se lee igual de izquierda a
+              derecha y viceversa)
+            </p>
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">Ingrese un número:</span>
+              </label>
+              <div class="flex gap-2">
+                <input
+                  type="number"
+                  id="input5"
+                  class="input input-bordered w-full max-w-xs"
+                  placeholder="Número"
+                />
+                <button onclick="checkPalindrome()" class="btn btn-primary">
+                  Ver
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ejercicio 6: Fibonacci -->
+        <div class="card bg-base-200 shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title">Secuencia Fibonacci</h2>
+            <p class="text-base-content">
+              Generar la secuencia Fibonacci hasta la posición especificada
+            </p>
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">Ingrese la posición:</span>
+              </label>
+              <div class="flex gap-2">
+                <input
+                  type="number"
+                  id="input6"
+                  class="input input-bordered w-full max-w-xs"
+                  placeholder="Posición"
+                />
+                <button onclick="generateFibonacci()" class="btn btn-primary">
+                  Ver
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Función para números pares e impares (ejercicio 1)
+      function checkNumber(exerciseId) {
+        const numero = parseInt(
+          document.getElementById("input" + exerciseId).value
+        );
+
+        if (isNaN(numero)) {
+          alert("Por favor ingrese un número válido");
+          return;
+        }
+
+        if (numero % 2 === 0) {
+          alert("El número es par");
+        } else {
+          alert("El número es impar");
+        }
+      }
+
+      // Función para comparar tres números (ejercicio 2)
+      function findLargest() {
+        const numeroA = parseInt(document.getElementById("input2a").value);
+        const numeroB = parseInt(document.getElementById("input2b").value);
+        const numeroC = parseInt(document.getElementById("input2c").value);
+
+        if (isNaN(numeroA) || isNaN(numeroB) || isNaN(numeroC)) {
+          alert("Por favor ingrese números válidos");
+          return;
+        }
+
+        if (numeroA > numeroB && numeroA > numeroC) {
+          alert("El número A es mayor que el número B y C");
+        } else if (numeroB > numeroA && numeroB > numeroC) {
+          alert("El número B es mayor que el número A y C");
+        } else if (numeroC > numeroA && numeroC > numeroB) {
+          alert("El número C es mayor que el número A y B");
+        } else {
+          alert("El número A, B y C son iguales");
+        }
+      }
+
+      // Función para calificaciones (ejercicio 3)
+      function checkGrade() {
+        const numero = parseInt(document.getElementById("input3").value);
+
+        if (isNaN(numero) || numero < 0 || numero > 10) {
+          alert("Por favor ingrese una calificación válida entre 0 y 10");
+          return;
+        }
+
+        if (numero <= 5) {
+          alert("tu callificacion es numero " + numero + " reprobado");
+        } else if (numero > 5 && numero <= 7) {
+          alert("tu callificacion es numero " + numero + " regular");
+        } else if (numero > 7 && numero <= 8) {
+          alert("tu callificacion es numero " + numero + " bien");
+        } else if (numero > 8 && numero <= 9) {
+          alert("tu callificacion es numero " + numero + " muy bien");
+        } else if (numero > 9 && numero <= 10) {
+          alert("tu callificacion es numero " + numero + " excelente");
+        }
+      }
+
+      // Función para rango (ejercicio 4)
+      function checkRange() {
+        const numero = parseInt(document.getElementById("input4").value);
+
+        if (isNaN(numero)) {
+          alert("Por favor ingrese un número válido");
+          return;
+        }
+
+        if (numero >= 1 && numero <= 100) {
+          alert("Número válido");
+        } else {
+          alert("Número fuera de rango");
+        }
+      }
+
+      // Función para palíndromo (ejercicio 5)
+      function checkPalindrome() {
+        const numeri = document.getElementById("input5").value;
+        let iremun = "";
+        for (let meh = String(numeri).length - 1; meh >= 0; meh--) {
+          iremun += String(numeri)[meh];
+        }
+        if (String(numeri) === iremun) {
+          alert(numeri + " es un palíndromo");
+        } else {
+          alert(numeri + " no es un palíndromo");
+        }
+      }
+
+      // Función para Fibonacci (ejercicio 6)
+      function generateFibonacci() {
+        const num = parseInt(document.getElementById("input6").value);
+
+        if (isNaN(num)) {
+          alert("Por favor ingrese un número válido");
+          return;
+        }
+
+        let secuencia = [0, 1];
+
+        if (num <= 1) {
+          let resultado = [];
+          for (let meh = 0; meh <= num; meh++) {
+            resultado.push(secuencia[meh]);
+          }
+          alert(
+            "Esta es tu secuencia hasta la posición " +
+              num +
+              ":\n" +
+              resultado.join(", ")
+          );
+          return;
+        }
+
+        for (let watever = 2; watever <= num; watever++) {
+          secuencia[watever] = secuencia[watever - 1] + secuencia[watever - 2];
+        }
+
+        alert(
+          "Esta es tu secuencia hasta la posición " +
+            num +
+            ":\n" +
+            secuencia.join(", ")
+        );
+      }
+    </script>
+  </body>
+</html>
