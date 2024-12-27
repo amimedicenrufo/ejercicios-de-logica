@@ -42,7 +42,7 @@ if (numero >= 1 && numero <= 100) {
   console.log("Número fuera de rango");
 }*/
 
-const palin = function (numeri) {
+/*const palin = function (numeri) {
   let iremun = "";
   for (let meh = String(numeri).length - 1; meh >= 0; meh--) {
     iremun += String(numeri)[meh];
@@ -76,3 +76,19 @@ const fib = function (num) {
 let peticion = 10;
 console.log("Esta es tu secuencia hasta la posición", peticion, ":");
 console.log(fib(peticion));
+*/
+/*anagrama*/
+const Anagrama = function (palabra1, palabra2) {
+  if (palabra1.length !== palabra2.length) {
+    return false;
+  }
+  if (
+    palabra1.split("").sort().join("") === palabra2.split("").sort().join("")
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+console.log(Anagrama("paz", "amor"));

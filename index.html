@@ -192,6 +192,35 @@
             </div>
           </div>
         </div>
+
+        <!-- Ejercicio 7: Anagrama -->
+        <div class="card bg-base-200 shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title">Verificación de Anagramas</h2>
+            <p class="text-base-content">
+              Determinar si dos palabras son anagramas
+            </p>
+            <div class="form-control">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mb-2">
+                <input
+                  type="text"
+                  id="input7a"
+                  class="input input-bordered"
+                  placeholder="Primera palabra"
+                />
+                <input
+                  type="text"
+                  id="input7b"
+                  class="input input-bordered"
+                  placeholder="Segunda palabra"
+                />
+              </div>
+              <button onclick="checkAnagram()" class="btn btn-primary">
+                Ver
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -323,6 +352,31 @@
             ":\n" +
             secuencia.join(", ")
         );
+      }
+
+      // Función para anagramas (ejercicio 7)
+      function checkAnagram() {
+        const palabra1 = document.getElementById("input7a").value.toLowerCase();
+        const palabra2 = document.getElementById("input7b").value.toLowerCase();
+
+        if (!palabra1 || !palabra2) {
+          alert("Por favor ingrese ambas palabras");
+          return;
+        }
+
+        if (palabra1.length !== palabra2.length) {
+          alert("Las palabras no son anagramas");
+          return;
+        }
+
+        if (
+          palabra1.split("").sort().join("") ===
+          palabra2.split("").sort().join("")
+        ) {
+          alert("Las palabras son anagramas");
+        } else {
+          alert("Las palabras no son anagramas");
+        }
       }
     </script>
   </body>
